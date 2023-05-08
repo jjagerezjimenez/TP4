@@ -1,5 +1,6 @@
 #include <stdbool.h>
-#include <stdio. h>			// controlar
+#include <stdio.h>			// controlar
+#include <stdint.h>
 #include "digital.h"
 
 #define INSTANCES 4		//ver 4
