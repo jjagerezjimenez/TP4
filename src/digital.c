@@ -12,14 +12,13 @@ typedef struct DigitalInput_s {
     uint8_t inverted;       //Bool?
     bool    last_state;
     bool    ocupado;
-}DigitalInput_t;
+} *DigitalInput_t;
 
 typedef struct DigitalOutput_s {
     uint8_t port;
     uint8_t pin;
     bool    ocupado;
-}DigitalOutput_t;
-
+} *DigitalOutput_t;
 
 //static struct DigitalInput  Input[INSTANCES]  = {0};
 //static struct DigitalOutput Output[INSTANCES] = {0};
@@ -42,7 +41,7 @@ DigitalInput_t DigitalInput_Ocupado(void){
 
 DigitalInput_t DigitalInput_Create(uint8_t port, uint8_t inverted, uint8_t pin) {
 
-    DigitalInput_t input = DigitalInput_Ocupado();
+    DigitalInput_t Input = DigitalInput_Ocupado();
     if(Input){
         Input->port           = port;
         Input->pin            = pin;
@@ -52,7 +51,7 @@ DigitalInput_t DigitalInput_Create(uint8_t port, uint8_t inverted, uint8_t pin) 
     }
     
 
-    return input;
+    return Input;
 }
 
 
