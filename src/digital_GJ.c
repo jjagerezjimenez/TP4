@@ -90,19 +90,19 @@ bool DigitalInput_HasDesactivate(DigitalInput_t Input) {
 
 //Salidas // Ver
 
-DigitalOutput_t DigitalOutput_Ocupado(void);
+//DigitalOutput_t DigitalOutput_Ocupado(void);
 
 DigitalOutput_t DigitalOutput_Ocupado(void){
-    DigitalOutput_t output = NULL;
+    DigitalOutput_t Output = NULL;
     static struct DigitalOutput_s instances[INSTANCIAS_GPIO]={0};
     for(int i=0;i<INSTANCIAS_GPIO;i++){
         if(!instances[i].ocupado){
             instances[i].ocupado=true;
-            output=&instances[i];
+            Output=&instances[i];
             break;
         }
     }
-    return output;
+    return Output;
 }
 
 

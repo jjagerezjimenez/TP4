@@ -78,11 +78,11 @@ int main(void) {
             DigitalOutput_Desactivate(board->Led_azul);
         }
 
-        if (DigitalInput_HasActivate(board->boton_prender)){
+        if (DigitalInput_HasActivate(board->boton_cambiar)){
             DigitalOutput_Toggle(board->Led_amarillo);
         }
 
-        if (DigitalInput_GetState(board->boton_cambiar)){
+        if (DigitalInput_GetState(board->boton_prender)){
             DigitalOutput_Activate(board->Led_rojo);
         }
 
