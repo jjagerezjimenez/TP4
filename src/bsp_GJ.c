@@ -1,4 +1,4 @@
-#include "bsp.h"
+#include "bsp_GJ.h"
 
 static struct board_s board ={0};
 
@@ -36,22 +36,22 @@ board_t PlacaCreate(void){
 
 //******
     Chip_SCU_PinMuxSet(TEC_1_PORT, TEC_1_PIN, SCU_MODE_INBUFF_EN | SCU_MODE_PULLUP | TEC_1_FUNC);
-    board.boton_prueba=DigitalInput_Create(TEC_1_GPIO,invertir_logica,TEC_1_BIT);
+    board.boton_prueba=DigitalInput_Create(TEC_1_GPIO,1,TEC_1_BIT);                                 //1-> Logica invertida, 0 lo contrario, consultar y ver los otros 3 casos
 
 
 
     Chip_SCU_PinMuxSet(TEC_2_PORT, TEC_2_PIN, SCU_MODE_INBUFF_EN | SCU_MODE_PULLUP | TEC_2_FUNC);
-    board.boton_cambiar=DigitalInput_Create(TEC_2_GPIO,invertir_logica, TEC_2_BIT);
+    board.boton_cambiar=DigitalInput_Create(TEC_2_GPIO,1, TEC_2_BIT);
 
 
 
     Chip_SCU_PinMuxSet(TEC_3_PORT, TEC_3_PIN, SCU_MODE_INBUFF_EN | SCU_MODE_PULLUP | TEC_3_FUNC);
-    board.boton_prender=DigitalInput_Create(TEC_3_GPIO,invertir_logica, TEC_3_BIT);
+    board.boton_prender=DigitalInput_Create(TEC_3_GPIO,1, TEC_3_BIT);
 
 
 
     Chip_SCU_PinMuxSet(TEC_4_PORT, TEC_4_PIN, SCU_MODE_INBUFF_EN | SCU_MODE_PULLUP | TEC_4_FUNC);
-    board.boton_apagar=DigitalInput_Create(TEC_4_GPIO,invertir_logica,TEC_4_BIT);
+    board.boton_apagar=DigitalInput_Create(TEC_4_GPIO,1,TEC_4_BIT);
 
 
 

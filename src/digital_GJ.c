@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>			// controlar
 #include <stdint.h>
-#include "digital.h"
+#include "digital_GJ.h"
 #include "chip.h"           //consultar
 
 //#define INSTANCIAS_GPIO 4		//ver 4

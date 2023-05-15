@@ -42,6 +42,8 @@
 
 #include "chip.h"
 #include <stdbool.h>
+#include "bsp_GJ.h"
+#include "digital_GJ.h"
 
 /* === Macros definitions ====================================================================== */
 
@@ -63,34 +65,40 @@
 int main(void) {
 
     int divisor = 0;
-    bool current_state, last_state = false;
+    //bool current_state, last_state = false;
+    board_t board = BoardCreate();
 
 
 
     while (true) {
-        if (Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, TEC_1_GPIO, TEC_1_BIT) == 0) {
-            Chip_GPIO_SetPinState(LPC_GPIO_PORT, LED_B_GPIO, LED_B_BIT, true);
+
+        if (DigitalInput_GetState(board->boton_prueba)) {
+            DigitalOutput_Activate(board->Led_azul);
         } else {
-            Chip_GPIO_SetPinState(LPC_GPIO_PORT, LED_B_GPIO, LED_B_BIT, false);
+            DigitalOutput_Desactivate(board->Led_azul);
         }
 
-        current_state = (Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, TEC_2_GPIO, TEC_2_BIT) == 0);
-        if ((current_state) && (!last_state)) {
-            Chip_GPIO_SetPinToggle(LPC_GPIO_PORT, LED_1_GPIO, LED_1_BIT);
+        if (DigitalInput_HasActivate(board->boton_prender)){
+            DigitalOutput_Toggle(board->Led_amarillo);
         }
-        last_state = current_state;
 
-        if (Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, TEC_3_GPIO, TEC_3_BIT) == 0) {
-            Chip_GPIO_SetPinState(LPC_GPIO_PORT, LED_2_GPIO, LED_2_BIT, true);
+        if (DigitalInput_GetState(board->boton_cambiar)){
+            DigitalOutput_Toggle(board->Led_rojo);
         }
-        if (Chip_GPIO_ReadPortBit(LPC_GPIO_PORT, TEC_4_GPIO, TEC_4_BIT) == 0) {
-            Chip_GPIO_SetPinState(LPC_GPIO_PORT, LED_2_GPIO, LED_2_BIT, false);
+
+        if (DigitalInput_GetState(board->boton_apagar)){
+            DigitalOutput_Toggle(board->Led_rojo);
         }
+
+
+    
+
 
         divisor++;
         if (divisor == 5) {
             divisor = 0;
-            Chip_GPIO_SetPinToggle(LPC_GPIO_PORT, LED_3_GPIO, LED_3_BIT);
+            //Chip_GPIO_SetPinToggle(LPC_GPIO_PORT, LED_3_GPIO, LED_3_BIT);
+            DigitalOutput_Toggle(board->Led_verde);
         }
 
         for (int index = 0; index < 100; index++) {

@@ -5,8 +5,8 @@
 #define INSTANCIAS_GPIO 4
 #endif
 
-#ifndef DIGITAL_H
-#define DIGITAL_H             //Buscar referencia del digital de los videos (hueco clases 11 y 12)
+#ifndef DIGITAL_GJ_H
+#define DIGITAL_GJ_H             //Buscar referencia del digital de los videos (hueco clases 11 y 12)
 
 
 

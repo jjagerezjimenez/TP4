@@ -2,7 +2,7 @@
 
 #include "chip.h"
 #include <stdbool.h>
-#include "digital.h"
+#include "digital_GJ.h"
 #include <stdint.h>
 
 
