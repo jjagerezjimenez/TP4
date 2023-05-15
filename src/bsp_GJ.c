@@ -20,13 +20,13 @@ board_t BoardCreate(void){
 
     Chip_SCU_PinMuxSet(LED_1_PORT, LED_1_PIN, SCU_MODE_INBUFF_EN | SCU_MODE_INACT | LED_1_FUNC);
     
-    board.Led_rojo=DigitalOutput_Create(LED_1_GPIO, LED_1_BIT);     //cambio?
+    board.Led_amarillo=DigitalOutput_Create(LED_1_GPIO, LED_1_BIT);     //cambio?
 
 
 
     Chip_SCU_PinMuxSet(LED_2_PORT, LED_2_PIN, SCU_MODE_INBUFF_EN | SCU_MODE_INACT | LED_2_FUNC);
 
-    board.Led_amarillo=DigitalOutput_Create(LED_2_GPIO, LED_2_BIT);    //cambio?
+    board.Led_rojo=DigitalOutput_Create(LED_2_GPIO, LED_2_BIT);    //cambio?
 
 
 
