@@ -13,6 +13,8 @@
 typedef struct DigitalInput_s *DigitalInput_t;
 typedef struct DigitalOutput_s *DigitalOutput_t;
 
+DigitalInput_t DigitalInput_Ocupado(void);
+
 
 DigitalInput_t DigitalInput_Create(uint8_t port,uint8_t inverted , uint8_t pin);  //eror uint_8
 
@@ -27,6 +29,9 @@ bool DigitalInput_HasActivate(DigitalInput_t Input);
 
 
 bool DigitalInput_HasDesactivate(DigitalInput_t Input);
+
+
+DigitalOutput_t DigitalOutput_Ocupado(void);
 
 
 DigitalOutput_t DigitalOutput_Create(uint8_t port, uint8_t pin);

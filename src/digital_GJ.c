@@ -25,6 +25,7 @@ typedef struct DigitalOutput_s {
 
 
 
+
 DigitalInput_t DigitalInput_Ocupado(void){
     DigitalInput_t Input = NULL;
     static struct DigitalInput_s instances[INSTANCIAS_GPIO]={0};
@@ -90,7 +91,6 @@ bool DigitalInput_HasDesactivate(DigitalInput_t Input) {
 
 //Salidas // Ver
 
-//DigitalOutput_t DigitalOutput_Ocupado(void);
 
 DigitalOutput_t DigitalOutput_Ocupado(void){
     DigitalOutput_t Output = NULL;
