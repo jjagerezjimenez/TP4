@@ -2,7 +2,7 @@
 
 static struct board_s board ={0};
 
-board_t PlacaCreate(void){
+board_t BoardCreate(void){
 
     Chip_SCU_PinMuxSet(LED_R_PORT, LED_R_PIN, SCU_MODE_INBUFF_EN | SCU_MODE_INACT | LED_R_FUNC);
     Chip_GPIO_SetPinState(LPC_GPIO_PORT, LED_R_GPIO, LED_R_BIT, false);

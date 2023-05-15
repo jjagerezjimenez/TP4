@@ -1,4 +1,5 @@
-
+#ifndef BSP_GJ_H
+#define BSP_GJ_H
 
 #include "chip.h"
 #include <stdbool.h>
@@ -87,3 +88,4 @@ typedef struct board_s {
 
 board_t BoardCreate(void);
 
+#endif
