@@ -113,8 +113,8 @@ DigitalOutput_t DigitalOutput_Create(uint8_t port, uint8_t pin) {
         Output->port           = port;
         Output->pin            = pin;
 
-        Chip_GPIO_SetPinDIR(LPC_GPIO_PORT, Output->port, Output->pin, false);
-        Chip_GPIO_SetPinState(LPC_GPIO_PORT, Output->port, Output->pin, true);
+        Chip_GPIO_SetPinDIR(LPC_GPIO_PORT, Output->port, Output->pin, true);
+        Chip_GPIO_SetPinState(LPC_GPIO_PORT, Output->port, Output->pin, false);
     }
     
 
