@@ -64,7 +64,7 @@ bool DigitalInput_HasChange(DigitalInput_t Input) {
 
     bool current_state = DigitalInput_GetState(Input);
     bool resultado = current_state != Input->last_state;
-    Input->last_state=current_state;
+    Input->last_state = current_state;
     return resultado;
 }
 
@@ -73,7 +73,7 @@ bool DigitalInput_HasActivate(DigitalInput_t Input) {
 
     bool current_state = DigitalInput_GetState(Input);
     bool resultado = current_state && !Input->last_state;
-    Input->last_state= current_state;
+    Input->last_state = current_state;
     return resultado;
 }
 
@@ -82,7 +82,7 @@ bool DigitalInput_HasDesactivate(DigitalInput_t Input) {
 
     bool current_state = DigitalInput_GetState(Input);
     bool resultado = !current_state && !Input->last_state;
-    Input->last_state= current_state;
+    Input->last_state = current_state;
     return resultado;
 }
 
@@ -114,7 +114,7 @@ DigitalOutput_t DigitalOutput_Create(uint8_t port, uint8_t pin) {
         Output->pin            = pin;
 
         Chip_GPIO_SetPinDIR(LPC_GPIO_PORT, Output->port, Output->pin, false);
-        Chip_GPIO_SetPinState(LPC_GPIO_PORT, Output->port, Output->pin, false);
+        Chip_GPIO_SetPinState(LPC_GPIO_PORT, Output->port, Output->pin, true);
     }
     
 
